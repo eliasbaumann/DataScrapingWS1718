@@ -1,2 +1,4 @@
 # DataScrapingWS1718
-i need a python file for this project and dont want to ask if i can submit a zip
+
+This repository hosts a python file needed for the notebook in this repository.
+This project was done as a submission for the data scraping course at Humboldt University in WS1718
