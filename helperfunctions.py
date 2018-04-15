@@ -5,7 +5,7 @@ import requests
 from io import BytesIO
 import numpy as np
 
-
+# get image urls by using the xpath
 def getImageUrl(url):
     response = requests.get(url)
     tree = lxml.html.fromstring(response.content)
@@ -13,7 +13,7 @@ def getImageUrl(url):
     imgUrl = 'https://basketball.realgm.com'+img
     return imgUrl
 	
-
+# transform image to be used by bokeh
 def getImageData(url):
     response = requests.get(url)
     inputImg = Image.open(BytesIO(response.content))
@@ -21,7 +21,6 @@ def getImageData(url):
     X = 100
     Y = 75
     img = np.empty((X,Y), dtype=np.uint32)
-
     view = img.view(dtype=np.uint8).reshape((X, Y, 4))
     for i in range(X):
         for j in range(Y):
